@@ -25,7 +25,6 @@ public class FirstTest {
         options.addArguments("--disable-gpu");
         options.addArguments("start-maximized");
         options.addArguments("disable-infobars");
-        options.addArguments(r"user-data-dir=.\cookies\\test");
                              
         driver = new ChromeDriver(options);
         driver.get("https://www.google.com");
