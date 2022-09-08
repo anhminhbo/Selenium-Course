@@ -20,6 +20,10 @@ public class FirstTest {
 	options.addArguments("--remote-debugging-port=922");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-setuid-sandbox");
+        options.addArguments("--disable-infobars");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("enable-automation");
+		
 		
         driver = new ChromeDriver(options);
 	
