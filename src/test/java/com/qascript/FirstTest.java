@@ -23,7 +23,7 @@ public class FirstTest {
 //         options.addArguments("--disable-dev-shm-using");
 //         options.addArguments("--disable-extensions");
 //         options.addArguments("--disable-gpu");
-        options.addArguments("start-maximized");
+//         options.addArguments("start-maximized");
         options.addArguments("disable-infobars");
                              
         driver = new ChromeDriver(options);
