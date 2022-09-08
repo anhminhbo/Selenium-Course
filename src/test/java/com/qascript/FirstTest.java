@@ -16,9 +16,9 @@ public class FirstTest {
 	WebDriverManager.chromedriver().setup();
 	
         ChromeOptions options = new ChromeOptions();
+	options.addArguments("--no-sandbox");
         options.addArguments("--headless");
 	options.addArguments("--remote-debugging-port=922");
-        options.addArguments("--no-sandbox");
         options.addArguments("--disable-setuid-sandbox");
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-dev-shm-usage");
