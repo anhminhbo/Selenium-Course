@@ -18,13 +18,13 @@ public class FirstTest {
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-setuid-sandbox");
 
-//         options.addArguments("--remote-debugging-port=9222");
+        options.addArguments("--remote-debugging-port=9222");
 
 //         options.addArguments("--disable-dev-shm-using");
-//         options.addArguments("--disable-extensions");
-//         options.addArguments("--disable-gpu");
-//         options.addArguments("start-maximized");
-//         options.addArguments("disable-infobars");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--disable-gpu");
+        options.addArguments("start-maximized");
+        options.addArguments("disable-infobars");
                              
         driver = new ChromeDriver(options);
 //         driver = new ChromeDriver();
