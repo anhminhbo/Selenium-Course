@@ -1,10 +1,19 @@
 package com.qascript;
+package io.github.bonigarcia.wdm.test.headless;
 
-import org.junit.Assert;
-import org.junit.Test;
+import static java.lang.invoke.MethodHandles.lookup;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.slf4j.LoggerFactory.getLogger;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.slf4j.Logger;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FirstTest {
@@ -38,7 +47,8 @@ public class FirstTest {
 //         assertThat(driver.getTitle()).contains("Selenium WebDriver");
 	driver.get("https://www.google.com");
         System.out.println("Title of the page is: " + driver.getTitle());
-        Assert.assertTrue("Page title is not correct",driver.getTitle().equals("Google"));
+//         Assert.assertTrue("Page title is not correct",driver.getTitle().equals("Google"));
+	assertThat(driver.getTitle()).contains("Google");
     }
 
 
