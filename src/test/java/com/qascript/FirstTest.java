@@ -15,10 +15,11 @@ public class FirstTest {
 	WebDriver driver;
 	WebDriverManager.chromedriver().setup();
 	
-//         ChromeOptions options = new ChromeOptions();
-//         options.addArguments("--headless");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+	options.addArguments("--remote-debugging-port=922");
 		
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
 	
         driver.get("https://www.google.com");
         System.out.println("Title of the page is: " + driver.getTitle());
