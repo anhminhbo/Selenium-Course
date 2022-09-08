@@ -1,9 +1,9 @@
 package com.qascript;
 package io.github.bonigarcia.wdm.test.headless;
 
-import static java.lang.invoke.MethodHandles.lookup;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.slf4j.LoggerFactory.getLogger;
+import java.lang.invoke.MethodHandles.lookup;
+import org.assertj.core.api.Assertions.assertThat;
+import org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -17,8 +17,6 @@ import org.slf4j.Logger;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FirstTest {
-	
-	
     WebDriver driver;
 
     @BeforeAll
@@ -51,8 +49,6 @@ public class FirstTest {
 	assertThat(driver.getTitle()).contains("Google");
     }
 
-
-
 //     @Test
 //     public void OpenBrowser()  {
 // //         WebDriver driver;
@@ -81,7 +77,6 @@ public class FirstTest {
 //         System.out.println("Title of the page is: " + driver.getTitle());
 //         Assert.assertTrue("Page title is not correct",driver.getTitle().equals("Google"));
 //     }
-
 
 }
 
