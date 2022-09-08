@@ -1,9 +1,7 @@
 package com.qascript;
 package io.github.bonigarcia.wdm.test.headless;
 
-import java.lang.invoke.MethodHandles.lookup;
 import org.assertj.core.api.Assertions.assertThat;
-import org.slf4j.LoggerFactory.getLogger;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -12,12 +10,10 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.slf4j.Logger;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FirstTest {
-    WebDriver driver;
+	 WebDriver driver;
 
     @BeforeAll
     static void setupClass() {
@@ -77,7 +73,6 @@ public class FirstTest {
 //         System.out.println("Title of the page is: " + driver.getTitle());
 //         Assert.assertTrue("Page title is not correct",driver.getTitle().equals("Google"));
 //     }
-
 }
 
 
