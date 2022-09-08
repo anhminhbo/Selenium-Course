@@ -7,36 +7,32 @@
     <groupId>com.qascript</groupId>
     <artifactId>Selenium-Course</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <properties>
-        <selenium.version>4.4.0</selenium.version>
-        <slf4j.version>1.7.36</slf4j.version>
-        <logback.version>1.2.11</logback.version>
+   <properties>
+        <slf4j.version>2.0.0</slf4j.version>
+        <logback.version>1.4.0</logback.version>
 
-        <junit5.version>5.9.0</junit5.version>
-        <wdm.version>5.2.3</wdm.version>
+        <junit.version>5.9.0</junit.version>
+        <assertj.version>3.23.1</assertj.version>
+        <selenium.version>4.4.0</selenium.version>
+        <phantomjsdriver.version>1.5.0</phantomjsdriver.version>
+        <wdm.version>5.3.0</wdm.version>
+        <testng.version>7.6.1</testng.version>
+        <appium-java-client.version>8.2.0</appium-java-client.version>
 
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
 
-        <java.version>8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <java.version>11</java.version>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.source>${java.version}</maven.compiler.source>
 
-        <project.encondig>UTF-8</project.encondig>
-        <project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
+        <maven.compiler.argument.target>${maven.compiler.target}</maven.compiler.argument.target>
+        <maven.compiler.argument.source>${maven.compiler.source}</maven.compiler.argument.source>
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-grid</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -47,38 +43,80 @@
             <artifactId>logback-classic</artifactId>
             <version>${logback.version}</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit5.version}</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${wdm.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-grid</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-remote-driver</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.codeborne</groupId>
+            <artifactId>phantomjsdriver</artifactId>
+            <version>${phantomjsdriver.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${appium-java-client.version}</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
+                <groupId>org.apache.maven.surefire</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*Example.java</include>
-                    </includes>
-                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit-platform</artifactId>
+                        <version>${maven-surefire-plugin.version}</version>
+                    </dependency>
+                </dependencies>
+                <!-- <inherited>true</inherited> <executions> <execution> <phase>test</phase> 
+                    <goals> <goal>test</goal> </goals> </execution> </executions> <configuration> <suiteXmlFiles> 
+                    <suiteXmlFile>src\test\resources\parallel.xml</suiteXmlFile> </suiteXmlFiles> </configuration> -->
             </plugin>
         </plugins>
     </build>
