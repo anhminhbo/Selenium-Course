@@ -18,6 +18,8 @@ public class FirstTest {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
 	options.addArguments("--remote-debugging-port=922");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-setuid-sandbox");
 		
         driver = new ChromeDriver(options);
 	
