@@ -1,5 +1,4 @@
 package com.qascript;
-package io.github.bonigarcia.wdm.test.headless;
 
 import org.assertj.core.api.Assertions.assertThat;
 
