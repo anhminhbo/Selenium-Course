@@ -44,6 +44,7 @@ public class FirstTest {
 	options.addArguments("disable-infobars"); // disabling infobars
 	options.addArguments("--disable-extensions"); // disabling extensions
 	options.addArguments("--disable-dev-shm-usage"); // overcome limited
+	options.addArguments("--remote-debugging-port=9222");
 	options.setExperimentalOption("useAutomationExtension", false);
         driver = new ChromeDriver(options);
         driver.get("https://www.google.com");
