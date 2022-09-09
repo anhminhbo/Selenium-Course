@@ -39,7 +39,7 @@ public class FirstTest {
         WebDriver driver;
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-	options.setBinary("/path/to/other/chrome/binary");
+	options.setBinary("/usr/bin/google-chrome");
         options.addArguments("--headless");
 	options.addArguments("start-maximized"); // open Browser in maximized mode
 	options.addArguments("disable-infobars"); // disabling infobars
