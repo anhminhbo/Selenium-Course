@@ -22,7 +22,7 @@ public class FirstTest {
         options.addArguments("--disable-setuid-sandbox");
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("enable-automation");
+        options.addArguments("--enable-automation");
 		
 		
         driver = new ChromeDriver(options);
