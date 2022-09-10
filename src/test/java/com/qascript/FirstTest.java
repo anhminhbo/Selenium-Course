@@ -42,6 +42,7 @@ public class FirstTest {
 	options.setBinary("/usr/bin/google-chrome");
 //         options.addArguments("--headless");
 	options.setHeadless(true);
+	options.addArguments("--no-sandbox");
 	options.addArguments("disable-infobars"); // disabling infobars
 	options.addArguments("--disable-extensions"); // disabling extensions
 	options.addArguments("--disable-dev-shm-usage"); // overcome limited
