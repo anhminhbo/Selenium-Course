@@ -40,7 +40,8 @@ public class FirstTest {
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
 	options.setBinary("/usr/bin/google-chrome");
-        options.addArguments("--headless");
+//         options.addArguments("--headless");
+	options.setHeadless(true);
 	options.addArguments("disable-infobars"); // disabling infobars
 	options.addArguments("--disable-extensions"); // disabling extensions
 	options.addArguments("--disable-dev-shm-usage"); // overcome limited
