@@ -41,12 +41,10 @@ public class FirstTest {
         ChromeOptions options = new ChromeOptions();
 	options.setBinary("/usr/bin/google-chrome");
         options.addArguments("--headless");
-	options.addArguments("start-maximized"); // open Browser in maximized mode
 	options.addArguments("disable-infobars"); // disabling infobars
 	options.addArguments("--disable-extensions"); // disabling extensions
 	options.addArguments("--disable-dev-shm-usage"); // overcome limited
-	options.addArguments("--remote-debugging-port=9222");
-	options.setExperimentalOption("useAutomationExtension", false);
+	options.addArguments("--remote-debugging-port=9222"); // fixing DevToolsFiles not exist
         driver = new ChromeDriver(options);
         driver.get("https://www.google.com");
         System.out.println("Title of the page is: " + driver.getTitle());
