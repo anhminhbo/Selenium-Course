@@ -1,5 +1,6 @@
 package com.qascript;
 
+import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -48,6 +49,7 @@ public class FirstTest {
 	options.addArguments("--disable-dev-shm-usage"); // overcome limited
 	options.addArguments("--remote-debugging-port=9222"); // fixing DevToolsFiles not exist
         driver = new ChromeDriver(options);
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://www.google.com");
         System.out.println("Title of the page is: " + driver.getTitle());
         Assert.assertTrue("Page title is not correct",driver.getTitle().equals("Google"));
